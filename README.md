@@ -1,170 +1,114 @@
-<img src="https://github.com/johncoleman83/AirBnB_clone/blob/master/dev/HBTN-hbnb-Final.png" width="160" height=auto />
+AirBnB_clone_v2
+# Project Title
 
-# AirBnB Clone Phase #1
+Short description of your project.
 
-: python BaseModel Class, unittests, python CLI, & web static
+## Table of Contents
 
-## Description
+- [Introduction](#introduction)
+- [Environment Variables](#environment-variables)
+- [Requirements](#requirements)
+  - [Python Scripts](#python-scripts)
+  - [Python Unit Tests](#python-unit-tests)
+  - [SQL Scripts](#sql-scripts)
+  - [GitHub](#github)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Unit Testing](#unit-testing)
+- [SQL Database](#sql-database)
+- [Contributing](#contributing)
+- [License](#license)
 
-Project attempts to clone the the AirBnB application and website, including the
-database, storage, RESTful API, Web Framework, and Front End.
+## Introduction
 
-## Environment
+Briefly introduce the purpose and goals of the project.
 
-* __OS:__ Ubuntu 14.04 LTS
-* __language:__ Python 3.4.3
-* __style:__ PEP 8 (v. 1.7.0)
+## Environment Variables
 
-<img src="https://github.com/johncoleman83/AirBnB_clone/blob/master/dev/hbnb_step5.png" />
+List and explain the environment variables used in the project.
 
-## Testing
+- `HBNB_ENV`: Running environment (`dev`, `test`, `production`).
+- `HBNB_MYSQL_USER`: MySQL username.
+- `HBNB_MYSQL_PWD`: MySQL password.
+- `HBNB_MYSQL_HOST`: MySQL hostname.
+- `HBNB_MYSQL_DB`: MySQL database name.
+- `HBNB_TYPE_STORAGE`: Type of storage used (`file` or `db`).
 
-#### NOTE: YOU MUST RUN THE SQL SCRIPT `setup_mysql_test.sql` RO RUN THE UNIT TESTS.
-```
-$ cat setup_mysql_test.sql | mysql -u root -p
-```
+## Requirements
 
+### Python Scripts
 
-#### `unittest`
+- **Allowed Editors:** vi, vim, emacs
+- **Interpreter/Compiler:** Ubuntu 20.04 LTS using python3 (version 3.8.5)
+- **File Endings:** All files should end with a new line
+- **First Line:** `#!/usr/bin/python3`
+- **README.md:** A mandatory README file at the root of the project folder
+- **Code Style:** Use pycodestyle (version 2.8.*)
+- **Executable Files:** All files must be executable
+- **File Length:** Will be tested using `wc`
+- **Documentation:** All modules, classes, and functions should have documentation
 
-This project uses python library, `unittest` to run tests on all python files.
-All unittests are in the `./tests` directory with the command:
+### Python Unit Tests
 
-* `python3 -m unittest discover -v ./tests/`
+- **Allowed Editors:** vi, vim, emacs
+- **File Endings:** All files should end with a new line
+- **File Organization:** Test files in a folder named `tests`, following the project structure
+- **Test Module:** Use the `unittest` module
+- **File Naming:** Test files and folders should start with `test_`
+- **Execution:** All tests should be executed using `python3 -m unittest discover tests`
+- **Documentation:** All modules, classes, and functions should have documentation
 
-The bash script `init_test.sh` executes all these tests:
+### SQL Scripts
 
-  * checks `pep8` style
+- **Allowed Editors:** vi, vim, emacs
+- **Execution Environment:** Ubuntu 20.04 LTS using MySQL 8.0
+- **SQLAlchemy Version:** 1.4.x
+- **File Endings:** All files should end with a new line
+- **Commenting:** All SQL queries should have a comment just before
+- **Keywords:** All SQL keywords should be in uppercase (e.g., `SELECT`, `WHERE`)
+- **README.md:** A mandatory README file at the root of the project folder
+- **File Length:** Will be tested using `wc`
 
-  * runs all unittests
+### GitHub
 
-  * runs all w3c_validator tests
+- **Repository:** One project repository per group
+- **Cloning:** Be cautious about cloning, forking, etc., to avoid score penalties
 
-  * cleans up all `__pycache__` directories and the storage file, `file.json`
+## Usage
 
-**Usage:**
+Provide instructions on how to use and run your project.
 
-```
-$ ./dev/init_test.sh
-```
+## File Structure
 
-#### CLI Interactive Tests
+Explain the organization of your project files and directories.
 
-This project uses python library, `cmd` to run tests in an interactive command
-line interface.  To begin tests with the CLI, run this script:
+## Dependencies
 
-```
-$ ./console.py
-```
+List any external dependencies or libraries required for your project.
 
-* For a detailed description of all tests, run these commands inside the
-custom CLI:
+## Installation
 
-```
-$ ./console.py
-(hbnb) help help
-List available commands with "help" or detailed help with "help cmd".
-(hbnb) help
+Provide installation instructions for your project.
 
-Documented commands (type help <topic>):
-========================================
-Amenity    City  Place   State  airbnb  create   help  show
-BaseModel  EOF   Review  User   all     destroy  quit  update
+## Configuration
 
-(hbnb) help User
-class method with .function() syntax
-        Usage: User.<command>(<id>)
-(hbnb) help create
-create: create [ARG]
-        ARG = Class Name
-        SYNOPSIS: Creates a new instance of the Class from given input ARG
-```
+Explain any configuration steps or requirements for the project.
 
-* Tests in the CLI may also be executed with this syntax:
+## Unit Testing
 
-  * **destroy:** `<class name>.destroy(<id>)`
+Explain how to run unit tests and any considerations for testing.
 
-  * **update:** `<class name>.update(<id>, <attribute name>, <attribute value>)`
+## SQL Database
 
-  * **update with dictionary:** `<class name>.update(<id>, <dictionary representation>)`
+Provide information on setting up and managing the MySQL database.
 
+## Contributing
 
-#### Continuous Integration
-
-Uses [Travis-CI](https://travis-ci.org/) to run all tests on all commits to the
-github repo
-
-## Running
-
-Clone the Repo
-```
-$ git clone https://github.com/glyif/AirBnB_clone_v3 && cd AirBnB_clone_v3
-```
-
-Install Dependencies
-```
-$ pip3 install -r requirements.txt
-```
-
-VirtualEnv Alternative
-```
-$ virtualenv -p $(which python3) env
-$ source env/bin/activate
-$ pip install -r requirements.txt
-```
-
-Running Console
-```
-$ ./console.py
-$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
-```
-
-Running Flask API
-```
-$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_HOST=0.0.0.0 HBNB_API_PORT=5000 python3 -m api.v1.app
-```
-
-To exit out of the virtualenv, use:
-```
-$ deactivate
-```
-
-### Docker Integration
-To run with docker, it's very simple.
-
-NOTE: You will need to have docker and docker-compose installed
-
-First, build all of the images. (console, db, api)
-```
-$ docker-compose build --no-cache
-```
-
-Then you can just run the images
-```
-$ docker-compose up -d
-```
-
-To use the console, you'll need to run:
-```
-$ docker exec -it <container_id> /bin/bash
-```
-NOTE: you will need to replace <container_id> with the actual console container id
-
-NOTE: TESTING WITH DOCKERHUB AND RANCHER
-## API Documentation
-There is a postman json in side the API folder that you can import to check out the api endpoints, or you can go to [the online version](https://documenter.getpostman.com/view/1535334/airbnb_clone_v3/6tc3iuA)
-
-Swagger documentation will soon come.
-
-## Authors
-
-* MJ Johnson, [@mj31508](https://github.com/mj31508)
-* David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
-* Kimberly Wong, [kjowong](http://github.com/kjowong) | [@kjowong](http://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
-* Carrie Ybay, [hicarrie](http://github.com/hicarrie) | [@hicarrie_](http://twitter.com/hicarrie_)
-* Naomi Sorrell, [NamoDawn](https://github.com/NamoDawn) | [@NamoDawn](https://twitter.com/NamoDawn)
-* Bobby Yang, [glyif](https://github.com/glyif) | [@bobstermyang](https://twitter.com/bobstermyang)
+Guidelines for contributing to the project.
 
 ## License
 
-Public Domain, no copyright protection
+State the license under which your project is released.
